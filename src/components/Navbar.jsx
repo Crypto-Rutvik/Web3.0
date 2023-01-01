@@ -1,5 +1,6 @@
 import { HiMenuAlt4 } from 'react-icons/hi'
 import {AiOutlineClose } from 'react-icons/ai'
+import React from 'react'
 
 const NavbarItem = ({title, classProps})=> {
     return (
@@ -9,12 +10,13 @@ const NavbarItem = ({title, classProps})=> {
     )
 }
 const Navbar = () => {
+    const [ toggleMenue, setToggleMenue] = React.useState(false);
     return (
         <nav className = "w-full flex md:justify-centre justify-centre p-4">
             <div className= "md:flex-[0.5] flex-initial justify-centre items-centre">
-            <img src= "../../images/logo.png" alt="logo" className="w-32 cursor-pointer" />
+                <img src= "../../images/logo.png" alt="logo" className="w-32 cursor-pointer" />
             </div>
-            <ul className = "text-white md:flex hiddent flex-row justify-between items-centre flex-initial">
+            <ul className = "text-white md:flex hidden flex-row justify-between items-centre flex-initial">
                 {["Markets", "Exchange", "Tutorials", "Wallets"].map((item, index)=>(
                     <NavbarItem key={item + index} title = {item} />
                 ))}
@@ -22,6 +24,19 @@ const Navbar = () => {
                     Login
                 </li>
             </ul>
+            <div className = "flex relative">
+                {toggleMenue
+                    ? <AiOutlineClose  fontSize = {28} className= "text-white md:hidden  cursor-pointer" onClick={ () => setToggleMenue(false)}/> 
+                    : <HiMenuAlt4 fontSize = {28} className= "text-white md:hidden cursor-pointer" onClick={ () => setToggleMenue(true)}/>  
+                } 
+                {toggleMenue &&
+                <ul>
+                    <li>
+                        <AiOutlineClose/>
+                    </li>
+                </ul>
+                }
+            </div>
         </nav>
     );
 }

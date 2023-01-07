@@ -46,7 +46,7 @@ const Welcome = () => {
                             Polygon
                         </div>
                         <div className = {`rounded-br-2xl ${commonStyles}`}>
-                            Solona
+                            Solana
                         </div>
                     </div>
                 </div>

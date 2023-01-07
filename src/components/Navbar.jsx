@@ -33,6 +33,15 @@ const Navbar = () => {
                 <ul>
                     <li>
                         <AiOutlineClose/>
+                        <li className = "text-white flex-centre text-center ">                       
+                            {["Markets", "Exchange", "Tutorials", "Wallets"].map((item, index)=>(
+                            <NavbarItem key={item + index} title = {item} />
+                            ))}
+                        </li>                
+
+                        <li className='px-7 py-0 mx-3 rounded-full text-white bg-[#2952e3] cursor-pointer hover:bg-[#2546bd]'>
+                            Login
+                        </li>
                     </li>
                 </ul>
                 }

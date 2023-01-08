@@ -1,6 +1,7 @@
+
 const Transactions = () => {
     return (
-        <h1>Transactions</h1>
+        <h1 className=" {commonStyles}">Transactions</h1>
     );
 }
 
